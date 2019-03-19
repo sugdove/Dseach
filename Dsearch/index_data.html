@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>索引数据查看</title>
+    <!-- Bootstrap -->
+    <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="../vendors/nprogress/nprogress.css" rel="stylesheet">
+    <!-- iCheck -->
+    <link href="../vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+    <!-- Datatables -->
+    <link href="../vendors/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
+    <link href="../vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css" rel="stylesheet">
+    <link href="../vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css" rel="stylesheet">
+    <link href="../vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" rel="stylesheet">
+    <link href="../vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/index_data.css">
+    <!--jquery-confirm-->
+    <link rel="stylesheet" href="../vendors/jquery-confirm-master/css/jquery-confirm.css">
+    <!-- Custom Theme Style -->
+    <link href="../build/css/custom.min.css" rel="stylesheet">
+    <!--分页-->
+    <link rel="stylesheet" href="css/paging.css">
+</head>
+
+<body class="nav-md">
+<div class="container body">
+    <div class="main_container">
+        <div class="col-md-3 left_col">
+            <div class="left_col scroll-view">
+                <div class="navbar nav_title" style="border: 0;">
+                    <a href="index.html" class="site_title"><i class="fa fa-desktop"></i><span>  Dsearch</span></a>
+                </div>
+
+                <div class="clearfix"></div>
+                <!-- /menu profile quick info -->
+
+                <br/>
+
+                <!-- 左侧导航栏 -->
+                <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+                    <div class="menu_section">
+                        <ul class="nav side-menu">
+                            <li><a><i class="fa fa-home"></i> 主页 <span class="fa fa-chevron-down"></span></a>
+                                <ul class="nav child_menu">
+                                    <li><a href="index.html">概况</a></li>
+                                </ul>
+                            </li>
+                            <li><a><i class="fa fa-edit"></i> 采集器 <span class="fa fa-chevron-down"></span></a>
+                                <ul class="nav child_menu">
+                                    <li>
+                                        <a>文件<span class="fa fa-chevron-down"></span></a>
+                                        <ul class="nav child_menu">
+                                            <li><a href="local_file.html">本地文件</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a>数据库<span class="fa fa-chevron-down"></span></a>
+                                        <ul class="nav child_menu">
+                                            <li class="sub_menu"><a href="javascript:void(0)" class="dataBaseJump">MySQL</a></li>
+                                            <li><a href="javascript:void(0)" class="dataBaseJump">Oracle</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a><i class="fa fa-desktop"></i> 信息管理 <span class="fa fa-chevron-down"></span></a>
+                                <ul class="nav child_menu">
+                                    <!--<li><a href="#level2_1">索引结构</a></li>-->
+                                    <li><a href="index_data.html">索引数据查看</a></li>
+                                </ul>
+                            </li>
+                            <!--<li><a><i class="fa fa-table"></i> 系统配置 <span class="fa fa-chevron-down"></span></a>
+                                <ul class="nav child_menu">
+                                    <li><a href="#level2_1">用户和角色管理</a></li>
+                                    <li><a href="#level2_1">运行参数配置</a></li>
+                                    <li><a href="#level2_1">检索参数配置</a></li>
+                                    <li>
+                                        <a>检索<span class="fa fa-chevron-down"></span></a>
+                                        <ul class="nav child_menu">
+                                            <li><a href="#level2_1">检索分类</a>
+                                            </li>
+                                            <li><a href="#level2_1">逻辑库管理</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#level2_1">扩展&插件</a></li>
+                                    <li><a href="#level2_1">文档格式管理</a></li>
+                                    <li>
+                                        <a>文件类型<span class="fa fa-chevron-down"></span></a>
+                                        <ul class="nav child_menu">
+                                            <li><a href="#level2_1">Word</a>
+                                            </li>
+                                            <li><a href="#level2_1">HTML</a>
+                                            </li>
+                                            <li><a href="#level2_1">PPT</a>
+                                            </li>
+                                            <li><a href="#level2_1">Excel</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>-->
+                            <li><a href="Acquisition_state.html"><i class="fa fa-sitemap"></i> 采集状态 </a>
+                            </li>
+                            <li><a href="Acquisition_result.html" onclick="return false"><i class="fa fa-bar-chart-o"></i> 搜索结果 </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+                <!-- /左侧导航栏 -->
+            </div>
+        </div>
+
+        <!-- 顶部导航 -->
+        <div class="top_nav">
+            <div class="nav_menu">
+                <nav>
+                    <div class="nav toggle">
+                        <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+                    </div>
+                    <form class="navbar-form navbar-left" role="search" style="margin-top: 12px">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="搜索">
+                        </div>
+                        <button type="submit" class="btn btn-default search" style="margin-bottom: 0px;"><i
+                                class="fa fa-search"></i></button>
+                    </form>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="">
+                            <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown"
+                               aria-expanded="false">
+                                <i class="fa fa-user"></i> User_Admin
+                                <span class=" fa fa-angle-down"></span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-usermenu pull-right">
+                                <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> 登 出</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <!-- /顶部导航 -->
+
+        <!-- 页面内容 -->
+        <div class="right_col" role="main">
+            <div class="">
+                <div class="clearfix"></div>
+
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="x_panel">
+                            <div class="x_title">
+                                <h2><i class="fa fa-search"></i> 索引数据查看
+                                </h2>
+                                <ul class="nav navbar-right panel_toolbox">
+                                    <li class="pull-right"><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                    </li>
+                                </ul>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="x_content">
+                                <div class="clearfix"></div>
+                                <!--表头功能区-->
+                                <div class="row">
+                                    <div class="col-sm-6 index-data-item">
+                                        <div>
+                                            显示
+                                            <label style="vertical-align: middle">
+                                                <select name="data-num" aria-controls="datatable-checkbox"
+                                                        class="form-control input-sm">
+                                                    <option value="10">10</option>
+                                                    <option value="25">25</option>
+                                                    <option value="50">50</option>
+                                                    <option value="100">100</option>
+                                                </select>
+                                            </label>
+                                            数据结果
+                                        </div>
+
+                                    </div>
+                                    <div class="col-sm-6  index-data-search">
+                                        <div class="pull-right">
+                                            搜索:
+                                            <label><input id="index-data-search" type="search" class="form-control input-sm" placeholder=""
+                                                          aria-controls="datatable-checkbox"></label>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <!--表格-->
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <table id="datatable-checkbox" class="table table-striped bulk_action">
+                                            <thead>
+                                            <tr>
+                                                <th>标题</th>
+                                                <th>创建时间</th>
+                                                <th>关键词</th>
+                                                <th>权限</th>
+                                                <th>附件数</th>
+                                                <th>操作</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                           <!--表格内容-->
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <!--页码-->
+                                <div class="row">
+                                    <!--<div class="col-sm-5">
+                                        <div class="dataTables_info" id="datatable-checkbox_info" role="status"
+                                             aria-live="polite">显示第 <span class="index-data-start">1</span> 至 <span
+                                                class="index-data-end">10</span> 项结果，共 <span
+                                                class="index-data-total">10</span> 项
+                                        </div>
+                                    </div>-->
+                                    <div class="col-sm-9 col-sm-offset-2">
+                                        <div class=" page_box" id="page_box" >
+                                            <!--页码内容-->
+                                        </div>
+                                    </div>
+                                    <div class="col-md-1 pull-right">
+                                        <button class="btn btn-sm btn-danger pull-right" title="清除所有数据" id="deleteAllData"><i class="fa fa-trash"></i></button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /页面内容 -->
+
+        <!-- 底部内容 -->
+        <footer>
+            <div class="pull-right">
+                Copyright 2017-2022 <a href="http://www.dsgdata.com/">www.dsgdata.com</a> 迪思杰 京ICP备05013295号
+            </div>
+            <div class="clearfix"></div>
+        </footer>
+        <!-- /底部内容 -->
+        <!-- 添加MySQL模态框 -->
+        <div class="modal fade in" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog">
+                <form class="form-horizontal calender" id="MySQL-form">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title" id="myModalLabel">索引数据详情</h4>
+                        </div>
+                        <div class="modal-body">
+                          <!--弹出框内容-->
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                            <!--<button type="submit" class="btn btn-primary" onclick="return false">确定</button>-->
+                        </div>
+                    </div><!-- /.modal-content -->
+                </form>
+            </div><!-- /.modal -->
+        </div>
+        <!-- /添加MySQL模态框 -->
+    </div>
+</div>
+
+<!--缓冲-->
+<div class="spinner">
+    <div class="spinner-container container1">
+        <div class="circle1"></div>
+        <div class="circle2"></div>
+        <div class="circle3"></div>
+        <div class="circle4"></div>
+    </div>
+    <div class="spinner-container container2">
+        <div class="circle1"></div>
+        <div class="circle2"></div>
+        <div class="circle3"></div>
+        <div class="circle4"></div>
+    </div>
+    <div class="spinner-container container3">
+        <div class="circle1"></div>
+        <div class="circle2"></div>
+        <div class="circle3"></div>
+        <div class="circle4"></div>
+    </div>
+</div>
+<!--虚化界面-->
+<div class="black_overlay">
+</div>
+
+<!-- jQuery -->
+<script src="../vendors/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="../vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- FastClick -->
+<script src="../vendors/fastclick/lib/fastclick.js"></script>
+<!-- NProgress -->
+<script src="../vendors/nprogress/nprogress.js"></script>
+<!-- iCheck -->
+<script src="../vendors/iCheck/icheck.min.js"></script>
+<!-- Datatables -->
+<script src="../vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="../vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<script src="../vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+<script src="../vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+<script src="../vendors/datatables.net-buttons/js/buttons.flash.min.js"></script>
+<script src="../vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
+<script src="../vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
+<script src="../vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
+<script src="../vendors/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
+<script src="../vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+<script src="../vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
+<script src="../vendors/datatables.net-scroller/js/dataTables.scroller.min.js"></script>
+<script src="../vendors/jszip/dist/jszip.min.js"></script>
+<script src="../vendors/pdfmake/build/pdfmake.min.js"></script>
+<script src="../vendors/pdfmake/build/vfs_fonts.js"></script>
+<!--分页-->
+<script src="js/paging.min.js"></script>
+<!-- validator -->
+<script src="../vendors/jquery.validate.min.js"></script>
+<script src="../vendors/messages_zh.js"></script>
+<!--jquery-confirm-->
+<script src="../vendors/jquery-confirm-master/js/jquery-confirm.js"></script>
+<!-- Custom Theme Scripts -->
+<script src="localhost.js"></script>
+<script src="../build/js/custom.js"></script>
+<!--自定义-->
+<script src="js/index_data.js"></script>
+</body>
+</html>

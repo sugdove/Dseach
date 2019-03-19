@@ -1,0 +1,77 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+button{
+  margin-right: 0;
+}
+.fl {
+  float: left;
+}
+.page_box {
+  height: 35px;
+  line-height: 35px;
+ /* position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);*/
+  text-align: center;
+}
+.page_box button {
+  padding: 0 5px;
+  /*margin: 0 10px;*/
+  height: 35px;
+  float: left;
+  cursor: pointer;
+  border: 1px solid #ebebeb;
+  background-color: #ffffff;
+}
+.page_box .first-page,
+.page_box .last-page {
+  margin: 0;
+}
+.page_box .pageWrap {
+  height: 35px;
+  float: left;
+  overflow: hidden;
+}
+.page_box .pageWrap ul {
+  width: 100000px;
+  height: 35px;
+  float: left;
+}
+.page_box .pageWrap ul li {
+  width: 40px;
+  height: 35px;
+  border: 1px solid #ebebeb;
+  line-height: 35px;
+  box-sizing: border-box;
+  cursor: pointer;
+  float: left;
+}
+.page_box .pageWrap ul .sel-page {
+  background-color: #1ABB9C;
+  color: #fff;
+  border: 1px solid #1ABB9C;
+}
+.page_box .jump-text {
+  width: 40px;
+  height: 35px;
+  box-sizing: border-box;
+  text-align: center;
+  /*margin: 0 5px;*/
+  float: left;
+  font-weight: bold;
+   border: 1px solid #1ABB9C;
+}
+.page_box .jump-button {
+  margin: 0;
+  float: left;
+}
+.page_box .total-pages,
+.page_box .total-count {
+  margin-left: 10px;
+  float: left;
+  font-size: 14px;
+}

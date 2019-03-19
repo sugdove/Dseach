@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <!-- Meta, title, CSS, favicons, etc. -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Oracle数据表详情</title>
+
+  <!-- Bootstrap -->
+  <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link href="../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <!-- NProgress -->
+  <link href="../vendors/nprogress/nprogress.css" rel="stylesheet">
+
+  <link href="../vendors/switchery/dist/switchery.min.css" rel="stylesheet">
+  <!-- iCheck -->
+  <link href="../vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+  <!-- Datatables -->
+  <link href="../vendors/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
+  <link href="../vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css" rel="stylesheet">
+  <link href="../vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css" rel="stylesheet">
+  <link href="../vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" rel="stylesheet">
+  <link href="../vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="../vendors/jquery-confirm-master/css/jquery-confirm.css">
+
+  <!-- Custom Theme Style -->
+  <link href="../build/css/custom.min.css" rel="stylesheet">
+  <style>
+    .plugin-cog{
+      padding-left: 13px;
+      cursor: pointer;
+    }
+    #taskNameTitle {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      max-width: 5px;
+    }
+    .error{
+      color:red;
+    }
+    .taskname:hover{
+      color:red;
+      text-decoration: underline;
+    }
+    .alert-danger, .alert-error {
+      color: white;
+      background-color: red;
+      padding: 6px;
+    }
+  </style>
+</head>
+
+<body class="nav-md">
+<div class="container body">
+  <div class="main_container">
+    <div class="col-md-3 left_col">
+      <div class="left_col scroll-view">
+        <div class="navbar nav_title" style="border: 0;">
+          <a href="index.html" class="site_title"><i class="fa fa-desktop"></i><span>  Dsearch</span></a>
+        </div>
+
+        <div class="clearfix"></div>
+        <!-- /menu profile quick info -->
+
+        <br/>
+
+        <!-- 左侧导航栏 -->
+        <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+          <div class="menu_section">
+            <ul class="nav side-menu">
+              <li><a><i class="fa fa-home"></i> 主页 <span class="fa fa-chevron-down"></span></a>
+                <ul class="nav child_menu">
+                  <li><a href="index.html">概况</a></li>
+                </ul>
+              </li>
+              <li class="active"><a><i class="fa fa-edit"></i> 采集器 <span class="fa fa-chevron-down"></span></a>
+                <ul class="nav child_menu" style="display: block;">
+                  <li>
+                    <a>文件<span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="local_file.html">本地文件</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="active">
+                    <a>数据库<span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu" style="display: block;">
+                      <li class="sub_menu"><a href="javascript:void(0)" class="dataBaseJump">MySQL</a></li>
+                      <li><a href="javascript:void(0)" class="dataBaseJump">Oracle</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li><a><i class="fa fa-desktop"></i> 信息管理 <span class="fa fa-chevron-down"></span></a>
+                <ul class="nav child_menu">
+                  <!--<li><a href="#level2_1">索引结构</a></li>-->
+                  <li><a href="index_data.html">索引数据查看</a></li>
+                </ul>
+              </li>
+              <!--<li><a><i class="fa fa-table"></i> 系统配置 <span class="fa fa-chevron-down"></span></a>
+                <ul class="nav child_menu">
+                  <li><a href="#level2_1">用户和角色管理</a></li>
+                  <li><a href="#level2_1">运行参数配置</a></li>
+                  <li><a href="#level2_1">检索参数配置</a></li>
+                  <li>
+                    <a>检索<span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="#level2_1">检索分类</a>
+                      </li>
+                      <li><a href="#level2_1">逻辑库管理</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li><a href="#level2_1">扩展&插件</a></li>
+                  <li><a href="#level2_1">文档格式管理</a></li>
+                  <li>
+                    <a>文件类型<span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="#level2_1">Word</a>
+                      </li>
+                      <li><a href="#level2_1">HTML</a>
+                      </li>
+                      <li><a href="#level2_1">PPT</a>
+                      </li>
+                      <li><a href="#level2_1">Excel</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>-->
+              <li><a href="Acquisition_state.html"><i class="fa fa-sitemap"></i> 采集状态 </a>
+              </li>
+              <li><a href="Acquisition_result.html" onclick="return false"><i class="fa fa-bar-chart-o"></i> 搜索结果 </a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+        <!-- /左侧导航栏 -->
+      </div>
+    </div>
+
+    <!-- 顶部导航 -->
+    <div class="top_nav">
+      <div class="nav_menu">
+        <nav>
+          <div class="nav toggle">
+            <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+          </div>
+          <form class="navbar-form navbar-left" role="search" style="margin-top: 12px">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="搜索">
+            </div>
+            <button type="submit" class="btn btn-default search" style="margin-bottom: 0px;"><i class="fa fa-search"></i></button>
+          </form>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="">
+              <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown"
+                 aria-expanded="false">
+                <i class="fa fa-user"></i> User_Admin
+                <span class=" fa fa-angle-down"></span>
+              </a>
+              <ul class="dropdown-menu dropdown-usermenu pull-right">
+                <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> 登 出</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <!-- /顶部导航 -->
+    <!-- 页面内容 -->
+    <div class="right_col" role="main">
+      <div class="">
+        <div class="clearfix"></div>
+        <div class="row">
+          <div class="col-md-3 col-sm-3 col-xs-3">
+            <div class="x_panel">
+              <div class="x_title" style="padding: 0px 5px 0px;">
+                <h2 style="display: block"><font id="taskNameTitle" style="color: cornflowerblue;">XXX</font> 表数据列表<small><button class="btn btn-xs btn-primary" data-target="#myModal" data-toggle="modal" id="showAddTableModelBtn" style="margin-bottom: 4px;"><i class="fa fa-plus"></i> 添加</button></small></h2>
+                <div class="clearfix"></div>
+              </div>
+              <div class="x_content" style="max-height: 600px; overflow-y:auto;min-height: 125px;" id="leftMainDetails">
+              </div>
+            </div>
+          </div>
+          <div class="col-md-9 col-sm-9 col-xs-9">
+            <div class="x_panel">
+              <div class="x_title">
+                <h2><font style="color:cornflowerblue;" id="taskNameTitle2">  </font> 数据表字段列表</h2>
+                <div class="clearfix"></div>
+              </div>
+              <div class="x_content" style="max-height: 573px;overflow: auto;">
+                <div class="clearfix">
+                </div>
+                <table id="datatable-checkbox" class="table table-striped bulk_action">
+                  <thead>
+                  <tr>
+                    <th><input type="checkbox" id="check-all" class="flat"></th>
+                    <th>名称</th>
+                    <th>类型</th>
+                    <th>索引字段</th>
+                    <th>主键</th>
+                    <th>时间戳</th>
+                    <th>插件</th>
+                  </tr>
+                  </thead>
+
+
+                  <tbody id="tableFiledList">
+
+                  </tbody>
+                </table>
+
+              </div>
+              <div class="pull-right">
+                <button class="btn btn-xs btn-danger" title="删除" id="deleteDetailsParam"><i class="fa fa-trash"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /页面内容 -->
+
+    <!-- 底部内容 -->
+    <footer>
+      <div class="pull-right">
+        Copyright 2017-2022 <a href="http://www.dsgdata.com/" >www.dsgdata.com</a> 迪思杰 京ICP备05013295号
+      </div>
+      <div class="clearfix"></div>
+    </footer>
+    <!-- /底部内容 -->
+    <!-- 添加数据表模态框 -->
+    <div class="modal fade in" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+      <div class="modal-dialog">
+        <form class="form-horizontal calender" id="MySQL-form">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="myModalLabel">添加<font class="dataBaseTypeText">Oracle</font>数据表任务</h4>
+          </div>
+          <div class="modal-body">
+              <div class="form-group">
+
+                <label  class="col-sm-2 control-label">任务名称</label>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control " required="required" name="taskName" id="taskName">
+                </div>
+              </div>
+            <div class="form-group">
+              <label class="control-label col-sm-2">采集类型</label>
+              <div class="col-sm-9">
+                <label class="c_label">
+                  SQL <input type="checkbox"  id="switch" class="js-switch" checked/> Table
+                </label>
+                <select class="form-control " required name="" style="margin-top: 5px;" id="tableType">
+
+                </select>
+                <textarea id="message" required="required"  class="form-control message"  name="message2" data-parsley-trigger="keyup" data-parsley-minlength="20" data-parsley-maxlength="100"  data-parsley-validation-threshold="10" style="max-width: 453.33px;width:453.33px;display: none;margin-top: 5px"></textarea>
+              </div>
+            </div>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+            <button type="submit" class="btn btn-primary" id="addTableBtn">确定</button>
+          </div>
+        </div><!-- /.modal-content -->
+        </form>
+      </div><!-- /.modal -->
+    </div>
+    <!-- /添加数据表模态框 -->
+    <!-- 修改数据表模态框 -->
+    <div class="modal fade in" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+      <div class="modal-dialog">
+        <form action="" class="form-horizontal calender" id="MySQL-form2">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h4 class="modal-title" id="myModalLabel2">修改Oracle数据表任务</h4>
+            </div>
+            <div class="modal-body">
+              <div class="form-group">
+
+                <label  class="col-sm-2 control-label">任务名称</label>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control " required name="taskName" id="taskName2">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="control-label col-sm-2">采集类型</label>
+                <div class="col-sm-9">
+                  <label class="c_label">
+                    SQL <input type="checkbox"  id="switch2" class="js-switch" checked/> Table
+                  </label>
+                  <select class="form-control " required name="" style="margin-top: 5px;" id="tableType2">
+
+                  </select>
+                  <textarea id="message2" required="required"  class="form-control message"  name="message2" data-parsley-trigger="keyup" data-parsley-minlength="20" data-parsley-maxlength="100"  data-parsley-validation-threshold="10" style="max-width: 453.33px;width:453.33px;display: none;margin-top: 5px"></textarea>
+                </div>
+              </div>
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+              <button type="submit" class="btn btn-primary" id="ChangeTableBtn2">确定</button>
+            </div>
+          </div><!-- /.modal-content -->
+        </form>
+      </div><!-- /.modal -->
+    </div>
+    <!-- /修改数据表模态框 -->
+    <!-- 插件参数模态框 -->
+    <div class="modal fade in" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel3" aria-hidden="true">
+      <div class="modal-dialog">
+        <form action="" class="form-horizontal calender" id="MySQL-form3">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="myModalLabel3">插件参数</h4>
+          </div>
+          <div class="modal-body" style="min-height: 150px">
+            <div class="form-group" style="margin-top: 30px">
+              <label class="control-label col-sm-3">选择参数类型</label>
+              <div class="col-sm-8">
+                <select class="form-control " required name="" id="cog_param">
+
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+            <button type="button" class="btn btn-primary" id="ChangeTableBtn3">确定</button>
+          </div>
+        </div><!-- /.modal-content -->
+        </form>
+      </div><!-- /.modal -->
+    </div>
+    <!-- /插件参数模态框 -->
+  </div>
+</div>
+
+<!-- jQuery -->
+<script src="../vendors/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="../vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- FastClick -->
+<script src="../vendors/fastclick/lib/fastclick.js"></script>
+<!-- NProgress -->
+<script src="../vendors/nprogress/nprogress.js"></script>
+<!-- iCheck -->
+<script src="../vendors/iCheck/icheck.min.js"></script>
+<!-- Datatables -->
+<script src="../vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="../vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<script src="../vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+<script src="../vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+<script src="../vendors/datatables.net-buttons/js/buttons.flash.min.js"></script>
+<script src="../vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
+<script src="../vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
+<script src="../vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
+<script src="../vendors/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
+<script src="../vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+<script src="../vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
+<script src="../vendors/datatables.net-scroller/js/dataTables.scroller.min.js"></script>
+<script src="../vendors/jszip/dist/jszip.min.js"></script>
+<script src="../vendors/pdfmake/build/pdfmake.min.js"></script>
+<script src="../vendors/switchery/dist/switchery.min.js"></script>
+<script src="../vendors/pdfmake/build/vfs_fonts.js"></script>
+<script src="../vendors/jquery-confirm-master/js/jquery-confirm.js"></script>
+<!-- validator -->
+<script src="../vendors/jquery.validate.min.js"></script>
+<script src="../vendors/messages_zh.js"></script>
+<!-- Custom Theme Scripts -->
+<script src="localhost.js"></script>
+<script src="js/dataBase_details.js"></script>
+<script src="../build/js/custom.js"></script>
+</body>
+</html>

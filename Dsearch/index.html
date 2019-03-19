@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>概况</title>
+
+    <!-- Bootstrap -->
+    <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="../vendors/nprogress/nprogress.css" rel="stylesheet">
+    <!--  -->
+    <link href="../build/css/custom.min.css" rel="stylesheet">
+</head>
+
+<body class="nav-md">
+<div class="container body">
+    <div class="main_container">
+        <div class="col-md-3 left_col">
+            <div class="left_col scroll-view">
+                <div class="navbar nav_title" style="border: 0;">
+                    <a href="index.html" class="site_title"><i class="fa fa-desktop"></i><span>   Dsearch</span></a>
+                </div>
+
+                <div class="clearfix"></div>
+                <!-- /menu profile quick info -->
+
+                <br/>
+
+                <!-- 左侧导航栏 -->
+                <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+                    <div class="menu_section">
+                        <ul class="nav side-menu">
+                            <li><a><i class="fa fa-home"></i> 主页 <span class="fa fa-chevron-down"></span></a>
+                                <ul class="nav child_menu">
+                                    <li><a href="index.html">概况</a></li>
+                                </ul>
+                            </li>
+                            <li><a><i class="fa fa-edit"></i> 采集器 <span class="fa fa-chevron-down"></span></a>
+                                <ul class="nav child_menu">
+                                    <li>
+                                        <a>文件<span class="fa fa-chevron-down"></span></a>
+                                        <ul class="nav child_menu">
+                                            <li><a href="local_file.html">本地文件</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a>数据库<span class="fa fa-chevron-down"></span></a>
+                                        <ul class="nav child_menu">
+                                            <li class="sub_menu"><a href="javascript:void(0)" class="dataBaseJump">MySQL</a></li>
+                                            <li><a href="javascript:void(0)" class="dataBaseJump">Oracle</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a><i class="fa fa-desktop"></i> 信息管理 <span class="fa fa-chevron-down"></span></a>
+                                <ul class="nav child_menu">
+                                   <!-- <li><a href="#level2_1">索引结构</a></li>-->
+                                    <li><a href="index_data.html">索引数据查看</a></li>
+                                </ul>
+                            </li>
+                           <!-- <li><a><i class="fa fa-table"></i> 系统配置 <span class="fa fa-chevron-down"></span></a>
+                                <ul class="nav child_menu">
+                                    <li><a href="#level2_1">用户和角色管理</a></li>
+                                    <li><a href="#level2_1">运行参数配置</a></li>
+                                    <li><a href="#level2_1">检索参数配置</a></li>
+                                    <li>
+                                        <a>检索<span class="fa fa-chevron-down"></span></a>
+                                        <ul class="nav child_menu">
+                                            <li><a href="#level2_1">检索分类</a>
+                                            </li>
+                                            <li><a href="#level2_1">逻辑库管理</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#level2_1">扩展&插件</a></li>
+                                    <li><a href="#level2_1">文档格式管理</a></li>
+                                    <li>
+                                        <a>文件类型<span class="fa fa-chevron-down"></span></a>
+                                        <ul class="nav child_menu">
+                                            <li><a href="#level2_1">Word</a>
+                                            </li>
+                                            <li><a href="#level2_1">HTML</a>
+                                            </li>
+                                            <li><a href="#level2_1">PPT</a>
+                                            </li>
+                                            <li><a href="#level2_1">Excel</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>-->
+                            <li><a href="Acquisition_state.html"><i class="fa fa-sitemap"></i> 采集状态 </a>
+                            </li>
+                            <li><a href="Acquisition_result.html" onclick="return false"><i
+                                    class="fa fa-bar-chart-o"></i> 搜索结果 </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+                <!-- /左侧导航栏 -->
+            </div>
+        </div>
+        <p id="dd"></p>
+        <!-- 顶部导航 -->
+        <div class="top_nav">
+            <div class="nav_menu">
+                <nav>
+                    <div class="nav toggle">
+                        <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+                    </div>
+                      <form class="navbar-form navbar-left" role="search" style="margin-top: 12px">
+                          <div class="form-group">
+                              <input type="text" class="form-control" placeholder="搜索">
+                          </div>
+                          <button  class="btn btn-default search" style="margin-bottom: 0px;"><i class="fa fa-search"></i></button>
+                      </form>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="">
+                            <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown"
+                               aria-expanded="false">
+                                <i class="fa fa-user"></i> User_Admin
+                                <span class=" fa fa-angle-down"></span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-usermenu pull-right">
+                                <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> 登 出</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <!-- /顶部导航 -->
+
+        <!-- 页面内容 -->
+        <div class="right_col" role="main">
+            <!--<div class="">
+                <div class="row top_tiles">
+                    <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <div class="tile-stats">
+                            <div class="icon"><i class="fa fa-caret-square-o-right"></i></div>
+                            <div class="count">179</div>
+                            <h3>新登录人员</h3>
+                            <p>查看详情.</p>
+                        </div>
+                    </div>
+                    <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <div class="tile-stats">
+                            <div class="icon"><i class="fa fa-comments-o"></i></div>
+                            <div class="count">179</div>
+                            <h3>新登录人员</h3>
+                            <p>查看详情.</p>
+                        </div>
+                    </div>
+                    <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <div class="tile-stats">
+                            <div class="icon"><i class="fa fa-sort-amount-desc"></i></div>
+                            <div class="count">179</div>
+                            <h3>新登录人员</h3>
+                            <p>查看详情.</p>
+                        </div>
+                    </div>
+                    <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <div class="tile-stats">
+                            <div class="icon"><i class="fa fa-check-square-o"></i></div>
+                            <div class="count">179</div>
+                            <h3>新登录人员</h3>
+                            <p>查看详情.</p>
+                        </div>
+                    </div>
+                </div>-->
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="x_panel">
+                            <div class="x_title">
+                                <h2>系统信息
+                                </h2>
+                                <ul class="nav navbar-right panel_toolbox">
+                                    <li class="pull-right"><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                    </li>
+
+                                </ul>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="x_content">
+
+                                <div class="col-md-8">
+                                    <div class="col-md-1">
+                                        <img src="images/Home.png" style="height: 55px;width: 55px" alt="Home">
+                                    </div>
+                                    <div class="col-md-11">
+                                        <div class="media-body">
+                                            <div class="tile">您好，admin</div>
+                                            <p id="showdate" style="color: #FF6600;margin-bottom: 0px">Loading...</p>
+                                            <p>系统启动时间： <font style="color: #FF6600;" id="systemStartTime">2018-03-12
+                                                10:26:43</font>，共检索<font style="color: #FF6600;"
+                                                                         id="searchTimes">21</font>次，平均响应时间：<font
+                                                    id="averageRespondTimes" style="color: #FF6600;">0.017s</font></p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="col-md-2">
+                                        <img src="images/ShutDown.png" style="height: 55px;width: 55px" alt="ShutDown">
+                                    </div>
+                                    <div class="col-md-10">
+                                        <div class="media-body">
+                                            <p style="margin-bottom: 18px">系统处理的信息总量：<font style="color: #FF6600"
+                                                                                           id="totalMessage">10736</font>
+                                            </p>
+                                            <p>系统分配内存/空闲内存：<font style="color: #FF6600"
+                                                                 id="memoryMessage">1023/0M</font></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="x_panel">
+                        <div class="x_title">
+                            <h2>图像显示
+                            </h2>
+                            <ul class="nav navbar-right panel_toolbox">
+                                <li class="pull-right"><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                </li>
+
+                            </ul>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="x_content" >
+
+                            <div class="col-md-6">
+                                <canvas  id="Chart1" style="height: 400px;width:400px">
+
+                                </canvas >
+
+                            </div>
+                            <div class="col-md-6">
+                                <canvas id="Chart2" style="height: 400px;width:400px">
+
+                                </canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="x_panel">
+                            <div class="x_title">
+                                <h2>服务器状态
+                                </h2>
+                                <ul class="nav navbar-right panel_toolbox">
+                                    <li class="pull-right"><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                    </li>
+
+                                </ul>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="x_content">
+                                <div class="col-md-1" style="padding-left: 0px">
+                                    <img src="images/SystemAnalysis.png" style="height: 106px;width: 106px;" alt="SystemAnalysis">
+                                </div>
+                                <div class="col-md-11">
+                                    <table width="100%" border="0" class="table table-bordered table-responsive"
+                                           cellpadding="2" cellspacing="1" style="background-color: #EFEFEF">
+                                        <tbody>
+                                        <tr style="background-color: #FFFFFF">
+                                            <td width="14%"><strong> 分配内存</strong></td>
+                                            <td width="12%" class="index_message">1023M</td>
+                                            <td width="14%"><strong> 当前用户</strong></td>
+                                            <td width="19%" class="index_message">suge</td>
+                                            <td width="17%"><strong> 索引信息总量</strong></td>
+                                            <td width="24%" ><font color="green" class="index_message">10736</font><font id="docsMessage">docs</font></td>
+                                        </tr>
+                                        <tr style="background-color: #FFFFFF">
+                                            <td nowrap="nowrap"><strong>空闲内存</strong> <br></td>
+                                            <td><font color="red" class="index_message">0</font>M</td>
+                                            <td><strong> JAVA虚拟机</strong></td>
+                                            <td class="index_message">Java HotSpot(TM) 64-Bit Server VM</td>
+                                            <td><strong> 检索请求次数</strong></td>
+                                            <td class="index_message">21</td>
+                                        </tr>
+                                        <tr style="background-color: #FFFFFF">
+                                            <td><strong>已使用内存</strong> <br></td>
+                                            <td class="index_message">1023M</td>
+                                            <td><strong> 虚拟机版本</strong></td>
+                                            <td class="index_message">1.7.0_17</td>
+                                            <td><strong> 平均检索响应时间</strong></td>
+                                            <td class="index_message">0.017s</td>
+                                        </tr>
+                                        <tr style="background-color: #FFFFFF">
+                                            <td><strong>操作系统</strong> <br></td>
+                                            <td width="12%" class="index_message"> Windows 8</td>
+                                            <td><strong> 服务器端口号 </strong></td>
+                                            <td class="index_message"></td>
+                                            <td><strong> 系统启动时间</strong></td>
+                                            <td class="index_message">2018-03-12 10:26:43</td>
+                                        </tr>
+                                        <tr style="background-color: #FFFFFF">
+                                            <td><strong>虚拟机路径</strong> <br></td>
+                                            <td colspan="5" class="index_message">C:\Program Files\Java\jdk1.7.0_17\jre</td>
+                                        </tr>
+                                        <tr style="background-color: #FFFFFF">
+                                            <td><strong>用户默认路径</strong> <br></td>
+                                            <td colspan="5" class="index_message">C:\Users\suge\Documents\Tencent
+                                                Files\849809724\FileRecv\r3\r3\bin
+                                            </td>
+                                        </tr>
+                                        <tr style="background-color: #FFFFFF">
+                                            <td height="23"><strong>磁盘空间/剩余空间</strong> <br></td>
+                                            <td >
+
+                                               <font class="index_message"> 241G/</font>
+                                                <font color="red" id="zzz">147G</font>
+
+                                            </td>
+                                            <td><strong > 授权产品/用户 </strong></td>
+                                            <td nowrap="nowrap">
+                                                <a href="javascript:void(0)" id="license" class="index_message">Full-Text Search/Open Source</a>
+                                            </td>
+                                            <td><strong> 数据量/节点数量 </strong></td>
+                                            <td class="index_message">
+                                                Unlimited/2147483647
+                                            </td>
+                                        </tr>
+                                        <tr style="background-color: #FFFFFF">
+                                            <td height="23"><strong>使用的存储空间</strong> <br></td>
+                                            <td nowrap="nowrap">
+
+                                                <a href="javascript:changeFunction(36);" class="index_message">
+
+
+                                                    21M
+
+
+                                                </a>
+                                            </td>
+                                            <td><strong >授权版本/类型/服务 </strong></td>
+                                            <td class="index_message">
+                                                Ultimate/Free/All
+                                            </td>
+                                            <td><strong> 授权日期 </strong></td>
+                                            <td class="index_message">Unlimited</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+        <!-- /页面内容 -->
+
+        <!-- 底部内容 -->
+        <footer>
+            <div class="pull-right">
+                Copyright 2017-2022 <a href="http://www.dsgdata.com/">www.dsgdata.com</a> 迪思杰 京ICP备05013295号
+            </div>
+            <div class="clearfix"></div>
+        </footer>
+        <!-- /底部内容 -->
+    </div>
+</div>
+
+<!-- jQuery -->
+<script src="../vendors/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="../vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- FastClick -->
+<script src="../vendors/fastclick/lib/fastclick.js"></script>
+<!-- NProgress -->
+<script src="../vendors/nprogress/nprogress.js"></script>
+<!-- Chart.js -->
+<script src="../vendors/Chart.js/dist/Chart.min.js"></script>
+<!-- Custom Theme Scripts -->
+<script src="localhost.js"></script>
+<script src="../build/js/custom.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>
